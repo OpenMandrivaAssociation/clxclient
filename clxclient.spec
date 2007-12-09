@@ -13,6 +13,8 @@ URL: 	       http://users.skynet.be/solaris/linuxaudio/getit.html
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires: clthreads-devel
+BuildRequires: x11-proto-devel
+BuildRequires: libxft-devel
 
 %description
 Clthreads C++ libraries

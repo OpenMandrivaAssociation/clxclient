@@ -5,7 +5,7 @@
 Name:          clxclient
 Summary:       Clxclient C++ libraries
 Version:       3.3.1
-Release:       %mkrel 4
+Release:       %mkrel 5
 License:       LGPLv2+
 Group:	       System/Libraries 
 Source0:       %{name}-%{version}.tar.bz2

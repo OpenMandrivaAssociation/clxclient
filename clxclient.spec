@@ -4,13 +4,13 @@
 
 Name:          clxclient
 Summary:       Clxclient C++ libraries
-Version:       3.3.1
-Release:       %mkrel 5
+Version:       3.6.1
+Release:       %mkrel 1
 License:       LGPLv2+
 Group:	       System/Libraries 
-Source0:       %{name}-%{version}.tar.bz2
-Patch0:        clxclient-3.3.1-fix-install.patch
-URL: 	       http://users.skynet.be/solaris/linuxaudio/getit.html
+Source0:       http://www.kokkinizita.net/linuxaudio/downloads/%{name}-%{version}.tar.bz2
+Patch0:        clxclient-3.6.1-linkage.patch
+URL: 	       http://www.kokkinizita.net/linuxaudio/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires: clthreads-devel
@@ -68,11 +68,12 @@ Development libraries from %name
 %patch0 -p0
 
 %build
-
-%make
+%make LDFLAGS="%{ldflags}"
 
 %install
-make DESTDIR=%buildroot  install
+rm -fr %buildroot
+mkdir -p %buildroot%_includedir
+make install PREFIX=%{buildroot}%{_prefix}
 
 %clean
-
+rm -fr %buildroot

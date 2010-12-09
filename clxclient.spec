@@ -5,7 +5,7 @@
 Name:          clxclient
 Summary:       Clxclient C++ libraries
 Version:       3.6.1
-Release:       %mkrel 1
+Release:       %mkrel 2
 License:       LGPLv2+
 Group:	       System/Libraries 
 Source0:       http://www.kokkinizita.net/linuxaudio/downloads/%{name}-%{version}.tar.bz2

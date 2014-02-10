@@ -1,0 +1,23 @@
+--- Makefile~	2013-08-07 21:25:19.138142091 +0100
++++ Makefile	2013-08-07 21:25:19.154142269 +0100
+@@ -39,7 +39,7 @@
+ CLXCLIENT_SO = libclxclient.so
+ CLXCLIENT_MAJ = $(CLXCLIENT_SO).$(MAJVERS)
+ CLXCLIENT_MIN = $(CLXCLIENT_MAJ).$(MINVERS)
+-CLXCLIENT_DEP = -lpthread -lXft -lX11
++CLXCLIENT_DEP = -lpthread -lXft -lX11 -lclthreads -lrt
+ CLXCLIENT_O = xdisplay.o xresman.o xhandler.o xwindow.o xdraw.o \
+ 	button.o textip.o enumip.o menuwin.o scale.o slider.o scroll.o mclist.o meter.o
+ CLXCLIENT_H = clxclient.h
+@@ -53,10 +53,10 @@
+ 	install -d $(PREFIX)/$(LIBDIR)
+ 	install -m 644 $(CLXCLIENT_H) $(PREFIX)/include
+ 	install -m 755 $(CLXCLIENT_MIN) $(PREFIX)/$(LIBDIR)
+-	ldconfig
+ 	ln -sf $(CLXCLIENT_MIN) $(PREFIX)/$(LIBDIR)/$(CLXCLIENT_SO)
+ 
+ 
+ clean:
+ 	/bin/rm -f *~ *.o *.a *.d *.so.*
+ 
++

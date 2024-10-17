@@ -11,7 +11,7 @@ Version:	3.9.0
 Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
-Url:		http://www.kokkinizita.net/linuxaudio/
+Url:		https://www.kokkinizita.net/linuxaudio/
 Source0:	http://www.kokkinizita.net/linuxaudio/downloads/%{name}-%{version}.tar.bz2
 Patch0:		clxclient-3.9.0.patch
 BuildRequires:	clthreads-devel
